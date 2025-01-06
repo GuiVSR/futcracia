@@ -1,11 +1,13 @@
-<h1>Partidas</h1>
+<div class="main-wrapper">
+        <h1>Partidas</h1>
 
-<ul>
-    <% @matches.each do |match|%>
-        <li>
-            <%= match.title%><br>
-            <%= match.home%><br>
-            <%= match.visitor%><br>
-        </li>
-    <%end%>
-</ul>
+        <ul>
+            <% @matches.each do |match|%>
+                <li>
+                    <%= match.title%><br>
+                    <%= match.home%><br>
+                    <%= match.visitor%><br>
+                </li>
+            <%end%>
+        </ul>
+</div>
