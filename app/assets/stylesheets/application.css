@@ -12,3 +12,19 @@
     display: flex;
     flex-direction: column;
 }
+
+.notice {
+    color: green;
+    background-color: #e6ffe6;
+    border: 1px solid green;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.alert {
+    color: red;
+    background-color: #ffe6e6;
+    border: 1px solid red;
+    padding: 10px;
+    margin: 10px 0;
+}
