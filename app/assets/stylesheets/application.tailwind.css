@@ -4,7 +4,7 @@
 
 @layer base {
     body {
-        @apply bg-primary-50;
+        @apply bg-primary-50 flex justify-center;
     }
 
     main {

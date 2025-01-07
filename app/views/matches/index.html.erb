@@ -10,4 +10,11 @@
                 </li>
             <%end%>
         </ul>
+
+  <% if user_signed_in? %>
+    <p>Welcome, <%= current_user.email %>!</p>
+    <%= render 'shared/button', text: 'Logout', path: destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= render 'shared/button', text: 'Login', path: new_user_session_path %>
+  <% end %>
 </div>

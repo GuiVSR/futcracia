@@ -1,0 +1,17 @@
+<% text ||= 'button' %>
+<% path ||= '#' %>
+<% method ||= :get %>
+<% style ||= '' %>
+
+
+<%= button_to text, path, method: method, class: (
+    "px-6 " +
+    "py-3 " +
+    "font-bold " +
+    "shadow-lg " +
+    "text-white " +
+    "rounded-lg " +
+    "hover:shadow-xl " +
+    "bg-secondary-700 " +
+    "#{style}" )
+%>
