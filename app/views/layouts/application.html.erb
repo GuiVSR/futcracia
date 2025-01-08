@@ -26,7 +26,17 @@
 
   <body>
     <main>
-      <%= yield %>
+      <div class="header">
+        <%= content_for?(:header) ? yield(:header) : "<h1>Default Header</h1>".html_safe %>
+      </div>
+      <div>#######################################</div><br />
+      <div class="body">
+        <%= content_for?(:body) ? yield(:body) : "<div>body!</div>".html_safe %>
+      </div>
+      <div>#######################################</div><br />
+      <div class="footer">
+        <%= content_for?(:footer) ? yield(:footer) : "<p>Default Footer Content</p>".html_safe %>
+      </div>
     </main>
 
     <div class="flash-messages">

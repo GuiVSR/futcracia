@@ -1,4 +1,5 @@
 Team.create([
+              { name: "Sem Time", city: nil, founded_on: nil, stadium: nil, primary_color: nil, secondary_color: nil },
               { name: "Atlético Mineiro", city: "Belo Horizonte", founded_on: "1908-03-25", stadium: "Mineirão", primary_color: "#000000", secondary_color: "#FFFFFF" },
               { name: "Atlético Paranaense", city: "Curitiba", founded_on: "1924-03-26", stadium: "Arena da Baixada", primary_color: "#E30613", secondary_color: "#000000" },
               { name: "Bahia", city: "Salvador", founded_on: "1931-01-01", stadium: "Fonte Nova", primary_color: "#0033A0", secondary_color: "#FFFFFF" },
