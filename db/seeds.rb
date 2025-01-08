@@ -17,7 +17,7 @@ Team.create([
               { name: "Red Bull Bragantino", city: "Bragança Paulista", founded_on: "1928-01-08", stadium: "Nabi Abi Chedid", primary_color: "#FFFFFF", secondary_color: "#FF0000" },
               { name: "Santos", city: "Santos", founded_on: "1912-04-14", stadium: "Vila Belmiro", primary_color: "#FFFFFF", secondary_color: "#000000" },
               { name: "São Paulo", city: "São Paulo", founded_on: "1930-01-25", stadium: "Morumbi", primary_color: "#FF0000", secondary_color: "#000000" },
-              { name: "Vasco da Gama", city: "Rio de Janeiro", founded_on: "1898-08-21", stadium: "São Januário", primary_color: "#000000", secondary_color: "#FFFFFF" },
+              { name: "Vasco da Gama", city: "Rio de Janeiro", founded_on: "1898-08-21", stadium: "São Januário", primary_color: "#000000", secondary_color: "#FFFFFF" }
             ])
 
 puts "Seeded Brasileirão Série A teams!"
