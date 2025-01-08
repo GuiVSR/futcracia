@@ -1,0 +1,16 @@
+<div class="card-futcracia">
+  <h1><%= @team.name %></h1>
+  <p>City: <%= @team.city %></p>
+  <p>Founded On: <%= @team.founded_on %></p>
+  <p>Stadium: <%= @team.stadium %></p>
+
+  <div>
+    <p>Primary Color:</p>
+    <div style="background-color: <%= @team.primary_color %>; width: 100px; height: 100px;"></div>
+  </div>
+
+  <div>
+    <p>Secondary Color:</p>
+    <div style="background-color: <%= @team.secondary_color %>; width: 100px; height: 100px;"></div>
+  </div>
+</div>

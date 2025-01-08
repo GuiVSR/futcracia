@@ -10,11 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_07_160002) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_08_171113) do
   create_table "matches", force: :cascade do |t|
     t.string "title"
     t.string "home"
     t.string "visitor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "name"
+    t.string "city"
+    t.date "founded_on"
+    t.string "stadium"
+    t.string "primary_color"
+    t.string "secondary_color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
