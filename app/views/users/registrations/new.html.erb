@@ -22,6 +22,11 @@
       <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
     </div>
 
+    <div class="field">
+      <%= f.label :team_id %>
+      <%= f.collection_select :team_id, Team.all, :id, :name, prompt: "Select a team" %>
+    </div>
+
     <%= render 'shared/button', text: 'Sign up', type: 'submit' %><br />
   <% end %>
 
