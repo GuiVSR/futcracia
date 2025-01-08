@@ -4,7 +4,7 @@
 
 @layer base {
     body {
-        @apply bg-primary-50;
+        @apply bg-primary-50 flex justify-center;
     }
 
     main {
@@ -14,6 +14,6 @@
 
 @layer components {
     .card-futcracia {
-        @apply bg-primary-100 p-4 rounded-lg;
+        @apply bg-primary-200 p-4 rounded-lg min-w-[2/5];
     }
 }
