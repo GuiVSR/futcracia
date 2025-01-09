@@ -1,7 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-const colors = require('tailwindcss/colors');
+  /** @type {import('tailwindcss').Config} */
 
-module.exports = {
+  module.exports = {
   content: [
     './public/*.html',
     './app/helpers/**/*.rb',
@@ -13,10 +12,21 @@ module.exports = {
       spacing: {
         '3': '12px',
       },
+      fontFamily: {
+        courier: ['Courier New', 'monospace']
+      },
+      colors: {
+        ringColor: {
+          DEFAULT: '#B81800',
+        },
+        outlineColor: {
+          DEFAULT: '#B81800',
+        },
+      },
     },
     colors: {
-      black: colors.black,
-      white: colors.white,
+      black: '#000000',
+      white: '#FFFFFF',
       primary: {
         50: '#FBF5EE',
         100: '#F3E2CD',
@@ -43,5 +53,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms')
+  ],
 }
