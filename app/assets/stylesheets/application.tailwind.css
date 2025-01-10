@@ -10,6 +10,18 @@
     main {
         @apply container flex justify-center items-center m-6;
     }
+
+    h1 {
+        @apply text-h1 font-bold;
+    }
+
+    h2 {
+        @apply text-h2;
+    }
+
+    .input-styles {
+        @apply bg-primary-50 p-2 rounded-lg w-full border border-primary-500 focus:ring focus:ring-secondary-700 focus:border-secondary-700;
+    }
 }
 
 @layer components {
