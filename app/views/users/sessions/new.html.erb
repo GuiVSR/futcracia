@@ -1,25 +1,50 @@
-<div class="card-futcracia">
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
+<% content_for :header do %>
+  <div class="text-center">
+    <h1>Futcracia</h1>
+    <h2>Login</h2>
+  </div>
+<% end %>
 
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "current-password" %>
-    </div>
+<% content_for :body do %>
+  <div>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-    <% if devise_mapping.rememberable? %>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+      <div class="field mb-4">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input-styles" %>
       </div>
+
+      <div class="field mb-4">
+        <%= f.label "senha" %><br />
+        <%= f.password_field :password, autofocus: true, autocomplete: "current-password", class: "input-styles"%>
+        <% if devise_mapping.rememberable? %>
+          <div class="field mt-2 flex justify-between p-0">
+            <div>
+              <%#= f.check_box :remember_me, class: "form-checkbox h-5 w-5 checked:text-secondary-600 mr-1" %>
+              <%#= f.label "Lembrar-se" %>
+            </div>
+            <%#- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+              <%#= render 'shared/button', text: 'Forgot Your Password?', path: new_password_path(resource_name), style:
+                "py-1 px-2"
+              %><br />
+            <%# end %>
+          </div>
+        <% end %>
+      </div>
+
+
+      <%= render 'shared/button', text: 'Login', type: 'submit', style: "py-3 px-6 w-full" %>
+      <%= render 'shared/divider' %>
+      <%= render 'shared/button', text: 'Criar Conta', path: new_user_registration_path, method: :get, style:
+        "py-3 px-6 w-full"%>
+      <br />
     <% end %>
+  </div>
+<% end %>
 
-    <%= render 'shared/button', text: 'Log in', type: 'submit' %><br />
-  <% end %>
-
-  <%= render "users/shared/links" %>
-</div>
+<% content_for :footer do %>
+  <div class="text-center">
+    <div>Footer</div>
+  </div>
+<% end %>
 

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
+    <meta name="turbo-cache-control" content="no-cache">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -21,15 +22,24 @@
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag 'application', 'button', media: 'all', 'data-turbo-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+New&display=swap" rel="stylesheet">
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <main>
-      <%= yield %>
+    <main class="main-wrapper">
+      <div class="header card-futcracia">
+        <%= content_for?(:header) ? yield(:header) : "<h1>Default Header</h1>".html_safe %>
+      </div>
+      <div class="body card-futcracia">
+        <%= content_for?(:body) ? yield(:body) : "<div>body!</div>".html_safe %>
+      </div>
+      <div class="footer card-futcracia">
+        <%= content_for?(:footer) ? yield(:footer) : "<p>Default Footer Content</p>".html_safe %>
+      </div>
     </main>
 
-    <div class="flash-messages">
+    <div class="flash-messages absolute top-0 left-1/2 animate-fadeOut">
       <% if notice %>
         <p class="notice"><%= notice %></p>
       <% end %>

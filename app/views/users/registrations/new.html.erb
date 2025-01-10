@@ -1,29 +1,53 @@
-<div class="card-futcracia">
-  <h2>Sign up</h2>
+<% content_for :header do %>
+  <div class="text-center">
+    <h1>Futcracia</h1>
+    <h2>Criar Conta</h2>
+  </div>
+<% end %>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "users/shared/error_messages", resource: resource %>
+<% content_for :body do %>
+    <div>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "users/shared/error_messages", resource: resource %>
 
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <div class="field mb-4">
+          <%= f.label "email" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input-styles" %>
+        </div>
+
+        <div class="field mb-4">
+          <%= f.label "senha"%>
+          <% if @minimum_password_length %>
+          <em>(Mínimo de <%= @minimum_password_length %> caracteres)</em>
+          <% end %>
+          <%= f.password_field :password, autocomplete: "new-password", class: "input-styles"%>
+        </div>
+
+        <div class="field mb-4">
+          <%= f.label "Confirmação de senha" %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input-styles" %>
+        </div>
+
+        <div class="field mb-8">
+          <%= f.label "Time" %> <br />
+          <%= f.collection_select :team_id, Team.all, :id, :name, { prompt: "Selecione seu time do coração" }, class:
+                "block outline-none w-full rounded-md bg-primary-50 p-2 " +
+                "border border-primary-500 " +
+                "focus:ring focus:ring-secondary-700 focus:border-secondary-700 "
+          %>
+        </div>
+
+        <%= render 'shared/button', text: 'Criar Conta', type: 'submit', style: "py-3 px-6 w-full" %>
+        <%= render 'shared/divider' %>
+        <%= render 'shared/button', text: 'Voltar', path: new_user_session_path, method: :get, style:
+          "py-3 px-6 w-full"%>
+      <% end %>
+
     </div>
+<% end %>
 
-    <div class="field">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
-
-    <%= render 'shared/button', text: 'Sign up', type: 'submit' %><br />
-  <% end %>
-
-  <%= render "users/shared/links" %>
-</div>
+<% content_for :footer do %>
+  <div class="text-center">
+    <div>Footer</div>
+  </div>
+<% end %>

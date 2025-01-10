@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  city: MyString
+  founded_on: 2025-01-08
+  stadium: MyString
+  primary_color: MyString
+  secondary_color: MyString
+
+two:
+  name: MyString
+  city: MyString
+  founded_on: 2025-01-08
+  stadium: MyString
+  primary_color: MyString
+  secondary_color: MyString

@@ -4,16 +4,28 @@
 
 @layer base {
     body {
-        @apply bg-primary-50 flex justify-center;
+        @apply bg-primary-50 flex justify-center font-courier;
     }
 
     main {
-        @apply container flex justify-center m-6;
+        @apply container flex justify-center items-center m-6;
+    }
+
+    h1 {
+        @apply text-h1 font-bold;
+    }
+
+    h2 {
+        @apply text-h2;
+    }
+
+    .input-styles {
+        @apply bg-primary-50 p-2 rounded-lg w-full border border-primary-500 focus:ring focus:ring-secondary-700 focus:border-secondary-700;
     }
 }
 
 @layer components {
     .card-futcracia {
-        @apply bg-primary-200 p-4 rounded-lg min-w-[2/5];
+        @apply bg-primary-200 p-8 rounded-lg max-w-[450px] w-[100%] shadow-lg;
     }
 }

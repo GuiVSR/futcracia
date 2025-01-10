@@ -1,0 +1,39 @@
+<div class="card-futcracia">
+  <h1><%= @team.name %></h1>
+  <p>City: <%= @team.city %></p>
+  <p>Founded On: <%= @team.founded_on %></p>
+  <p>Stadium: <%= @team.stadium %></p>
+
+
+</div>
+
+
+<% content_for :header do %>
+  <div class="text-center">
+    <h1><%= @team.name %></h1>
+  </div>
+<% end %>
+
+<% content_for :body do %>
+  <ul>
+    <li><p>Cidade: <%= @team.city %></p></li>
+    <li><p>Fundado em: <%= @team.founded_on %></p></li>
+    <li><p>Stadium: <%= @team.stadium %></p></li>
+  </ul>
+
+  <div>
+    <p>Cor A:</p>
+    <div style="background-color: <%= @team.primary_color %>; width: 100px; height: 100px;"></div>
+  </div>
+
+  <div>
+    <p>Cor B:</p>
+    <div style="background-color: <%= @team.secondary_color %>; width: 100px; height: 100px;"></div>
+  </div>
+<% end %>
+
+<% content_for :footer do %>
+  <div class="text-center">
+    <div>footer</div>
+  </div>
+<% end %>

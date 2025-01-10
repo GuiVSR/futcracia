@@ -1,0 +1,26 @@
+<% content_for :header do %>
+  <div class="text-center">
+    <h1>Times</h1>
+  </div>
+<% end %>
+
+<% content_for :body do %>
+  <ul>
+    <% @teams.each do |team| %>
+      <li>
+        <%= link_to team.name, team_path(team) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% content_for :footer do %>
+  <div class="text-center">
+    <div>footer</div>
+  </div>
+  <% if user_signed_in? %>
+    <%= render 'shared/button', text: 'Logout', type: 'submit', path: destroy_user_session_path, method: :delete, style: "py-3 px-6 w-full" %>
+  <% else %>
+    <%= render 'shared/button', text: 'Login', type: 'submit', path: user_registration_path, style: "py-3 px-6 w-full" %>
+  <% end %>
+<% end %>
