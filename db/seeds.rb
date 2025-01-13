@@ -1,4 +1,4 @@
-Team.create([
+teams = Team.create([
               { name: "Sem Time", city: nil, founded_on: nil, stadium: nil, primary_color: nil, secondary_color: nil },
               { name: "Atlético Mineiro", city: "Belo Horizonte", founded_on: "1908-03-25", stadium: "Mineirão", primary_color: "#000000", secondary_color: "#FFFFFF" },
               { name: "Atlético Paranaense", city: "Curitiba", founded_on: "1924-03-26", stadium: "Arena da Baixada", primary_color: "#E30613", secondary_color: "#000000" },
@@ -22,3 +22,21 @@ Team.create([
             ])
 
 puts "Seeded Brasileirão Série A teams!"
+
+
+Match.create!({ title: "Derby", home: teams[5], visitor: teams[15], date: "2023-01-11" })
+
+Match.create!([
+               { title: "Derby", home: teams[5], visitor: teams[15], date: "2023-01-11" },
+               { title: "Match 1", home: teams[1], visitor: teams[2], date: "2024-01-01" },
+               { title: "Match 2", home: teams[3], visitor: teams[4], date: "2024-01-02" },
+               { title: "Match 3", home: teams[5], visitor: teams[6], date: "2024-01-03" },
+               { title: "Match 4", home: teams[7], visitor: teams[8], date: "2024-01-04" },
+               { title: "Match 5", home: teams[9], visitor: teams[10], date: "2024-01-05" },
+               { title: "Match 6", home: teams[11], visitor: teams[12], date: "2024-01-06" },
+               { title: "Match 7", home: teams[13], visitor: teams[14], date: "2024-01-07" },
+               { title: "Match 8", home: teams[15], visitor: teams[16], date: "2024-01-08" },
+               { title: "Match 9", home: teams[17], visitor: teams[18], date: "2024-01-09" },
+             ])
+
+puts "Seeded matches!"

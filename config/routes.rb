@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resource :matches
 
   authenticated :user do
-    root to: "teams#index", as: :authenticated_root
+    root to: "matches#index", as: :authenticated_root
   end
 
   unauthenticated do

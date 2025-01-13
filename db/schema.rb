@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_08_175342) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_13_155425) do
   create_table "matches", force: :cascade do |t|
     t.string "title"
-    t.string "home"
-    t.string "visitor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "home_id", null: false
+    t.integer "visitor_id", null: false
+    t.date "date"
+    t.index ["home_id"], name: "index_matches_on_home_id"
+    t.index ["visitor_id"], name: "index_matches_on_visitor_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -44,5 +47,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_08_175342) do
     t.index ["team_id"], name: "index_users_on_team_id"
   end
 
+  add_foreign_key "matches", "teams", column: "home_id"
+  add_foreign_key "matches", "teams", column: "visitor_id"
   add_foreign_key "users", "teams"
 end

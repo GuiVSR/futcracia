@@ -1,5 +1,7 @@
 class Match < ApplicationRecord
+  belongs_to :home, class_name: "Team"
+  belongs_to :visitor, class_name: "Team"
+
   validates :title, presence: true
-  validates :home, presence: true
-  validates :visitor, presence: true
+  validates :date, presence: true
 end
