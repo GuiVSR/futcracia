@@ -15,6 +15,11 @@
 <% end %>
 
 <% content_for :body do %>
+  <div class="text-center">
+    <% if @team.image.attached? %>
+      <%= image_tag @team.image %>
+    <% end %>
+  </div>
   <ul>
     <li><p>Cidade: <%= @team.city %></p></li>
     <li><p>Fundado em: <%= @team.founded_on %></p></li>

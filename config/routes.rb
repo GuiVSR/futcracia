@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  resources :leagues
   devise_for :users, controllers: {
     sessions: "users/sessions"
   }
 
   resources :teams, only: [ :index, :show ], param: :name
-  resource :matches
+  resources :matches, only: [ :index, :show ]
 
   authenticated :user do
     root to: "matches#index", as: :authenticated_root

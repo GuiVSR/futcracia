@@ -1,16 +1,14 @@
 <% content_for :header do %>
   <div class="text-center">
-    <h1>Partidas</h1>
+    <h1><%= @match.title %></h1>
   </div>
 <% end %>
 
 <% content_for :body do %>
   <ul>
-    <% @matches.each do |match|%>
-      <li>
-        <%= link_to match.title, match_path(match) %>
-      </li>
-    <%end%>
+    <li><%= @match.home.name %></li>
+    <li><%= @match.visitor.name %></li>
+    <li><%= @match.date %></li>
   </ul>
 <% end %>
 
