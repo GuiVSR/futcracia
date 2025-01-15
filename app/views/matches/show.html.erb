@@ -1,6 +1,23 @@
 <% content_for :header do %>
   <div class="text-center">
     <h1><%= @match.title %></h1>
+    <div class="flex px-4 py-6 justify-around">
+      <div id="home">
+        <% home_image_path = "teams/#{@home.name}/logo.png" %>
+        <%= image_tag(home_image_path, alt: "#{@home.name} logo") %>
+        <div class="score">
+          <%=@match.home_score %>
+        </div>
+      </div>
+      <div id="visitor">
+        <% visitor_image_path = "teams/#{@visitor.name}/logo.png" %>
+        <%= image_tag(visitor_image_path, alt: "#{@visitor.name} logo") %>
+        <div class="score">
+          <%=@match.visitor_score %>
+        </div>
+      </div>
+    </div>
+
   </div>
 <% end %>
 

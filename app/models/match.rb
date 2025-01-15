@@ -4,4 +4,6 @@ class Match < ApplicationRecord
 
   validates :title, presence: true
   validates :date, presence: true
+  validates :home_score, presence: true
+  validates :visitor_score, presence: true
 end

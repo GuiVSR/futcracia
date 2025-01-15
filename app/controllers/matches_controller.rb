@@ -5,5 +5,7 @@ class MatchesController < ApplicationController
 
   def show
     @match = Match.find_by(id: params[:id])
+    @home = @match.home
+    @visitor = @match.visitor
   end
 end

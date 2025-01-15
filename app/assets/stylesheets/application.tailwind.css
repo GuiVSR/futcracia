@@ -19,6 +19,10 @@
         @apply text-h2;
     }
 
+    .score {
+        @apply font-righteous text-score-big bg-primary-50 border-2 border-primary-500 my-4 px-2 py-3 rounded-lg;
+    }
+
     .input-styles {
         @apply bg-primary-50 p-2 rounded-lg w-full border border-primary-500 focus:ring focus:ring-secondary-700 focus:border-secondary-700;
     }

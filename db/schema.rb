@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_14_210955) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_15_193330) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -42,7 +42,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_14_210955) do
   create_table "leagues", force: :cascade do |t|
     t.string "name"
     t.string "country"
-    t.string "string"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -54,8 +53,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_14_210955) do
     t.integer "home_id", null: false
     t.integer "visitor_id", null: false
     t.date "date"
-    t.integer "homeScore"
-    t.integer "visitorScore"
+    t.integer "home_score"
+    t.integer "visitor_score"
     t.index ["home_id"], name: "index_matches_on_home_id"
     t.index ["visitor_id"], name: "index_matches_on_visitor_id"
   end
@@ -69,6 +68,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_14_210955) do
     t.string "secondary_color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "official_name"
     t.integer "league_id"
   end
 

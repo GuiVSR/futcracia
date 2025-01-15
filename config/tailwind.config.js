@@ -13,7 +13,8 @@ module.exports = {
         '3': '12px',
       },
       fontFamily: {
-        courier: ['Courier New', 'monospace']
+        courier: ['Courier New', 'monospace'],
+        righteous: ['Righteous', 'monospace'],
       },
       colors: {
         black: '#000000',
@@ -55,6 +56,7 @@ module.exports = {
       fontSize: {
         h1: ['32px', { lineHeight: '40px' }],
         h2: ['24px', { lineHeight: '30px' }],
+        'score-big': ['40px']
       },
     },
   },

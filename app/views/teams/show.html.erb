@@ -16,9 +16,10 @@
 
 <% content_for :body do %>
   <div class="text-center">
-    <% if @team.image.attached? %>
-      <%= image_tag @team.image %>
-    <% end %>
+    <% image_path = "teams/#{@team.name}/logo.png"%>
+    <% mini_path = "teams/#{@team.name}/logo_mini.png"%>
+    <%= image_tag(image_path, alt: "#{@team.name} logo") %>
+    <%= image_tag(mini_path, alt: "#{@team.name} logo") %>
   </div>
   <ul>
     <li><p>Cidade: <%= @team.city %></p></li>
