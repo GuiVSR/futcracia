@@ -218,7 +218,8 @@ Match.create([
                  visitor: teams[15],
                  date: "2023-01-11",
                  home_score: 3,
-                 visitor_score: 1
+                 visitor_score: 1,
+                 stadium: teams[5].stadium
                },
                {
                  title: "derby",
@@ -226,7 +227,8 @@ Match.create([
                  visitor: teams[5],
                  date: "2023-01-11",
                  home_score: 0,
-                 visitor_score: 5
+                 visitor_score: 5,
+                 stadium: teams[15].stadium
                },
                {
                  title: "Match 1",
@@ -234,7 +236,8 @@ Match.create([
                  visitor: teams[2],
                  date: "2024-01-01",
                  home_score: 1,
-                 visitor_score: 1
+                 visitor_score: 1,
+                 stadium: teams[1].stadium
                },
                {
                  title: "Match 2",
@@ -242,7 +245,8 @@ Match.create([
                  visitor: teams[4],
                  date: "2024-01-02",
                  home_score: 0,
-                 visitor_score: 2
+                 visitor_score: 2,
+                 stadium: teams[3].stadium
                },
                {
                  title: "Match 3",
@@ -250,7 +254,8 @@ Match.create([
                  visitor: teams[6],
                  date: "2024-01-03",
                  home_score: 3,
-                 visitor_score: 0
+                 visitor_score: 0,
+                 stadium: teams[5].stadium
                },
                {
                  title: "Match 4",
@@ -258,7 +263,8 @@ Match.create([
                  visitor: teams[8],
                  date: "2024-01-04",
                  home_score: 1,
-                 visitor_score: 1
+                 visitor_score: 1,
+                 stadium: teams[7].stadium
                },
                {
                  title: "Match 5",
@@ -266,7 +272,8 @@ Match.create([
                  visitor: teams[10],
                  date: "2024-01-05",
                  home_score: 2,
-                 visitor_score: 2
+                 visitor_score: 2,
+                 stadium: teams[9].stadium
                },
                {
                  title: "Match 6",
@@ -274,7 +281,8 @@ Match.create([
                  visitor: teams[12],
                  date: "2024-01-06",
                  home_score: 0,
-                 visitor_score: 1
+                 visitor_score: 1,
+                 stadium: teams[11].stadium
                },
                {
                  title: "Match 7",
@@ -282,7 +290,8 @@ Match.create([
                  visitor: teams[14],
                  date: "2024-01-07",
                  home_score: 1,
-                 visitor_score: 0
+                 visitor_score: 0,
+                 stadium: teams[13].stadium
                },
                {
                  title: "Match 8",
@@ -290,7 +299,8 @@ Match.create([
                  visitor: teams[16],
                  date: "2024-01-08",
                  home_score: 3,
-                 visitor_score: 1
+                 visitor_score: 1,
+                 stadium: teams[15].stadium
                },
                {
                  title: "Match 9",
@@ -298,7 +308,8 @@ Match.create([
                  visitor: teams[18],
                  date: "2024-01-09",
                  home_score: 2,
-                 visitor_score: 3
+                 visitor_score: 3,
+                 stadium: teams[17].stadium
                }
              ])
 
