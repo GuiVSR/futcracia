@@ -211,7 +211,7 @@ teams = Team.create([
 
 puts "Seeded Brasileirão Série A and Série B teams!"
 
-Match.create([
+matches = Match.create([
                {
                  title: "derby",
                  home: teams[5],
@@ -314,3 +314,9 @@ Match.create([
              ])
 
 puts "Seeded matches with scores!"
+
+derby = matches.first
+poll_ax_b = PollAxB.create!(event_a: "Penalty", event_b: "!_Penalty")
+Poll.create!(pollable: poll_ax_b, match: first_match)
+
+puts "Seeded poll for the first match!"
