@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_17_005926) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_17_171525) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -61,24 +61,23 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_17_005926) do
   end
 
   create_table "poll_ax_bs", force: :cascade do |t|
-    t.integer "poll_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "event_a"
     t.string "event_b"
     t.integer "votes_a"
     t.integer "votes_b"
-    t.index ["poll_id"], name: "index_poll_ax_bs_on_poll_id"
   end
 
   create_table "polls", force: :cascade do |t|
     t.string "title"
-    t.string "poll_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "pollable_type", null: false
     t.integer "pollable_id", null: false
     t.string "winner"
+    t.integer "match_id", null: false
+    t.index ["match_id"], name: "index_polls_on_match_id"
     t.index ["pollable_type", "pollable_id"], name: "index_polls_on_pollable"
   end
 
@@ -113,6 +112,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_17_005926) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "matches", "teams", column: "home_id"
   add_foreign_key "matches", "teams", column: "visitor_id"
-  add_foreign_key "poll_ax_bs", "polls"
+  add_foreign_key "polls", "matches"
   add_foreign_key "users", "teams"
 end

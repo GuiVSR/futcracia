@@ -2,7 +2,7 @@ class Match < ApplicationRecord
   belongs_to :home, class_name: "Team"
   belongs_to :visitor, class_name: "Team"
 
-  has_many :polls, as: :pollable
+  has_many :polls, dependent: :destroy
 
   validates :title, presence: true
   validates :date, presence: true
