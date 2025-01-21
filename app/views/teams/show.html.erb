@@ -5,7 +5,7 @@
 <% end %>
 
 <% content_for :body do %>
-  <div class="text-center">
+  <div class="card-futcracia middle-card text-center">
     <% image_path = "teams/#{@team.name}/logo.png"%>
     <% mini_path = "teams/#{@team.name}/logo_mini.png"%>
     <%= image_tag(image_path, alt: "#{@team.name} logo") %>

@@ -1,4 +1,8 @@
 <% content_for :header do %>
+  <div class="flex items-center justify-center">
+    <% democratinha_image_path_2 = "democratinha_256.png" %>
+    <%= image_tag(democratinha_image_path_2, alt: "democratinha") %>
+  </div>
   <div class="text-center">
     <h1>Futcracia</h1>
     <h2>Criar Conta</h2>
@@ -6,7 +10,7 @@
 <% end %>
 
 <% content_for :body do %>
-    <div>
+    <div class="card-futcracia middle-card">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "users/shared/error_messages", resource: resource %>
 

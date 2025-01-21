@@ -5,7 +5,7 @@
 <% end %>
 
 <% content_for :body do %>
-  <ul>
+  <ul class="card-futcracia middle-card">
     <% @matches.each do |match|%>
       <li>
         <%= link_to match.title, match_path(match) %>

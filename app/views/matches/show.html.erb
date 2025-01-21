@@ -23,11 +23,16 @@
 <% end %>
 
 <% content_for :body do %>
-  <ul>
-    <li><%= @match.home.name %></li>
-    <li><%= @match.visitor.name %></li>
-    <li><%= @match.date %></li>
-  </ul>
+  <div class="card-futcracia middle-card">
+    <ul>
+      <li><%= @match.home.name %></li>
+      <li><%= @match.visitor.name %></li>
+      <li><%= @match.date %></li>
+    </ul>
+  </div>
+  <% @polls.each do |poll|%>
+    <%= render_poll(poll.pollable_type) %>
+  <% end %>
 <% end %>
 
 <% content_for :footer do %>

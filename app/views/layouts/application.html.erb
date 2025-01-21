@@ -29,13 +29,11 @@
 
   <body>
     <main class="main-wrapper">
-      <div class="header card-futcracia">
+      <div class="top-card card-futcracia">
         <%= content_for?(:header) ? yield(:header) : "<h1>Default Header</h1>".html_safe %>
       </div>
-      <div class="body card-futcracia">
-        <%= content_for?(:body) ? yield(:body) : "<div>body!</div>".html_safe %>
-      </div>
-      <div class="footer card-futcracia">
+      <%= content_for?(:body) ? yield(:body) : "<div>body!</div>".html_safe %>
+      <div class="bottom-card card-futcracia">
         <%= content_for?(:footer) ? yield(:footer) : "<p>Default Footer Content</p>".html_safe %>
       </div>
     </main>

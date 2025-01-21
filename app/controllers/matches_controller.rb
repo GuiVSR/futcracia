@@ -7,5 +7,6 @@ class MatchesController < ApplicationController
     @match = Match.find_by(id: params[:id])
     @home = @match.home
     @visitor = @match.visitor
+    @polls = @match.polls
   end
 end
