@@ -1,3 +1,14 @@
 <div class="card-futcracia middle-card">
   <div>poll AxB</div>
+  <%= poll.pollable.event_a %>
+  <%= poll.pollable.event_b %>
+  <div>
+    Votos A
+    <%= poll.count_event(poll.pollable.event_a) %>
+
+  </div>
+  <div>
+    Votos B
+    <%= poll.count_event(poll.pollable.event_b) %>
+  </div>
 </div>

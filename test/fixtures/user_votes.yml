@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  poll: one
+  poll_type: Poll
+  vote_type: MyString
+
+two:
+  user: two
+  poll: two
+  poll_type: Poll
+  vote_type: MyString

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_20_140503) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_27_050424) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -65,8 +65,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_20_140503) do
     t.datetime "updated_at", null: false
     t.string "event_a"
     t.string "event_b"
-    t.integer "votes_a"
-    t.integer "votes_b"
   end
 
   create_table "polls", force: :cascade do |t|
@@ -95,6 +93,18 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_20_140503) do
     t.integer "league_id"
   end
 
+  create_table "user_votes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "poll_type", null: false
+    t.integer "poll_id", null: false
+    t.string "vote_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "event"
+    t.index ["poll_type", "poll_id"], name: "index_user_votes_on_poll"
+    t.index ["user_id"], name: "index_user_votes_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -114,5 +124,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_20_140503) do
   add_foreign_key "matches", "teams", column: "home_id"
   add_foreign_key "matches", "teams", column: "visitor_id"
   add_foreign_key "polls", "matches"
+  add_foreign_key "user_votes", "users"
   add_foreign_key "users", "teams"
 end

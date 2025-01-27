@@ -1,8 +1,8 @@
 module PollsHelper
-  def render_poll(poll_type)
-    case poll_type
+  def render_poll(poll)
+    case poll.pollable_type
     when "PollAxB"
-      render "polls/poll_ax_bs/poll_ax_bs"
+      render "polls/poll_ax_bs/poll_ax_bs",  poll: poll
     else
     content_tag(:p, "Unknown commentable type")
     end

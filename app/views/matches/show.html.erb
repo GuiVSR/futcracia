@@ -31,7 +31,7 @@
     </ul>
   </div>
   <% @polls.each do |poll|%>
-    <%= render_poll(poll.pollable_type) %>
+    <%= render_poll(poll) %>
   <% end %>
 <% end %>
 

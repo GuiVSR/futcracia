@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "poll_ax_bs/vote_for_a"
+  get "poll_ax_bs/vote_for_b"
   resources :polls
   resources :leagues
   devise_for :users, controllers: {
