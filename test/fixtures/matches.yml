@@ -1,11 +1,25 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  home: MyString
-  visitor: MyString
+  id: 1
+  title: "Match 1"
+  home_id: 1
+  visitor_id: 2
+  date: 2025-01-01
+  home_score: 1
+  visitor_score: 2
+  stadium: "Stadium 1"
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
 
 two:
-  title: MyString
-  home: MyString
-  visitor: MyString
+  id: 2
+  title: "Match 2"
+  home_id: 2
+  visitor_id: 1
+  date: 2025-01-02
+  home_score: 2
+  visitor_score: 1
+  stadium: "Stadium 2"
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>

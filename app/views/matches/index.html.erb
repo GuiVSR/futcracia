@@ -1,20 +1,26 @@
-<div class="main-wrapper card-futcracia">
-        <h1>Partidas</h1>
+<% content_for :header do %>
+  <div class="text-center">
+    <h1>Partidas</h1>
+  </div>
+<% end %>
 
-        <ul>
-            <% @matches.each do |match|%>
-                <li>
-                    <%= match.title%><br>
-                    <%= match.home%><br>
-                    <%= match.visitor%><br>
-                </li>
-            <%end%>
-        </ul>
+<% content_for :body do %>
+  <ul class="card-futcracia middle-card">
+    <% @matches.each do |match|%>
+      <li>
+        <%= link_to match.title, match_path(match) %>
+      </li>
+    <%end%>
+  </ul>
+<% end %>
 
+<% content_for :footer do %>
+  <div class="text-center">
+    <div>footer</div>
+  </div>
   <% if user_signed_in? %>
-    <p>Welcome, <%= current_user.email %>!</p>
-    <%= render 'shared/button', text: 'Logout', path: destroy_user_session_path, method: :delete %>
+    <%= render 'shared/button', text: 'Logout', type: 'submit', path: destroy_user_session_path, method: :delete, style: "py-3 px-6 w-full" %>
   <% else %>
-    <%= render 'shared/button', text: 'Login', path: new_user_session_path %>
+    <%= render 'shared/button', text: 'Login', type: 'submit', path: user_registration_path, style: "py-3 px-6 w-full" %>
   <% end %>
-</div>
+<% end %>

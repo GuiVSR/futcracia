@@ -1,20 +1,16 @@
-<div class="card-futcracia">
-  <h1><%= @team.name %></h1>
-  <p>City: <%= @team.city %></p>
-  <p>Founded On: <%= @team.founded_on %></p>
-  <p>Stadium: <%= @team.stadium %></p>
-
-
-</div>
-
-
 <% content_for :header do %>
   <div class="text-center">
-    <h1><%= @team.name %></h1>
+        <h1><%= @team.name %></h1>
   </div>
 <% end %>
 
 <% content_for :body do %>
+  <div class="card-futcracia middle-card text-center">
+    <% image_path = "teams/#{@team.name}/logo.png"%>
+    <% mini_path = "teams/#{@team.name}/logo_mini.png"%>
+    <%= image_tag(image_path, alt: "#{@team.name} logo") %>
+    <%= image_tag(mini_path, alt: "#{@team.name} logo") %>
+  </div>
   <ul>
     <li><p>Cidade: <%= @team.city %></p></li>
     <li><p>Fundado em: <%= @team.founded_on %></p></li>

@@ -1,13 +1,23 @@
 Rails.application.routes.draw do
+  get "poll_ax_bs/vote_for_a"
+  get "poll_ax_bs/vote_for_b"
+  resources :polls
+  resources :leagues
+  resources :poll_ax_bs do
+    member do
+      post "vote_for_a"
+      post "vote_for_b"
+    end
+  end
   devise_for :users, controllers: {
     sessions: "users/sessions"
   }
 
   resources :teams, only: [ :index, :show ], param: :name
-  resource :matches
+  resources :matches, only: [ :index, :show ]
 
   authenticated :user do
-    root to: "teams#index", as: :authenticated_root
+    root to: "matches#index", as: :authenticated_root
   end
 
   unauthenticated do

@@ -1,0 +1,47 @@
+<% content_for :header do %>
+  <div class="text-center">
+    <h1><%= @match.title %></h1>
+    <%= render 'shared/divider' %>
+    <div class="flex px-4 py-6 justify-around">
+      <div id="home" class="flex flex-col items-center">
+        <% home_image_path = "teams/#{@home.name}/logo.png" %>
+        <%= safe_image_tag(home_image_path, "democratinha_100.png", alt: "#{@home.name} logo") %>
+        <div class="score">
+          <%=@match.home_score %>
+        </div>
+      </div>
+      <div id="visitor" class="flex flex-col items-center">
+        <% visitor_image_path = "teams/#{@visitor.name}/logo.png" %>
+        <%= safe_image_tag(visitor_image_path, "democratinha_100.png", alt: "#{@visitor.name} logo") %>
+        <div class="score">
+          <%=@match.visitor_score %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+<% end %>
+
+<% content_for :body do %>
+  <div class="card-futcracia middle-card">
+    <ul>
+      <li><%= @match.home.name %></li>
+      <li><%= @match.visitor.name %></li>
+      <li><%= @match.date %></li>
+    </ul>
+  </div>
+  <% @polls.each do |poll|%>
+    <%= render_poll(poll) %>
+  <% end %>
+<% end %>
+
+<% content_for :footer do %>
+  <div class="text-center">
+    <div>footer</div>
+  </div>
+  <% if user_signed_in? %>
+    <%= render 'shared/button', text: 'Logout', type: 'submit', path: destroy_user_session_path, method: :delete, style: "py-3 px-6 w-full" %>
+  <% else %>
+    <%= render 'shared/button', text: 'Login', type: 'submit', path: user_registration_path, style: "py-3 px-6 w-full" %>
+  <% end %>
+<% end %>

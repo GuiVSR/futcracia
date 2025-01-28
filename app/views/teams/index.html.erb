@@ -5,7 +5,7 @@
 <% end %>
 
 <% content_for :body do %>
-  <ul>
+  <ul class="card-futcracia middle-card">
     <% @teams.each do |team| %>
       <li>
         <%= link_to team.name, team_path(team) %>
