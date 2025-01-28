@@ -1,17 +1,21 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  city: MyString
+  id: 1
+  name: "Team One"
+  city: "City One"
   founded_on: 2025-01-08
-  stadium: MyString
-  primary_color: MyString
-  secondary_color: MyString
+  stadium: "Stadium One"
+  primary_color: "Color One"
+  secondary_color: "Color Two"
+  league_id: 1
 
 two:
-  name: MyString
-  city: MyString
+  id: 2
+  name: "Team Two"
+  city: "City Two"
   founded_on: 2025-01-08
-  stadium: MyString
-  primary_color: MyString
-  secondary_color: MyString
+  stadium: "Stadium Two"
+  primary_color: "Color Three"
+  secondary_color: "Color Four"
+  league_id: 2
