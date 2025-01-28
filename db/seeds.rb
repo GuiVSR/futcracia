@@ -329,6 +329,6 @@ puts "Seeded matches with scores!"
 
 derby = matches.first
 poll_ax_b = PollAxB.create(event_a: "Penalty", event_b: "!_Penalty")
-poll = Poll.create!(title: "Penalty", pollable: poll_ax_b, match_id: derby.id)
+poll = Poll.create!(title: "Poll teste 1", pollable: poll_ax_b, match_id: derby.id)
 
 puts "Seeded poll for the first match!"

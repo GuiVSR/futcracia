@@ -1,5 +1,5 @@
 class PollAxBsController < ApplicationController
-  before_action :set_poll_ax_b, only: [ :vote_for_a, :vote_for_b, :show ]
+  before_action :set_poll_ax_b, only: [ :vote_for_a, :vote_for_b ]
 
   def vote_for_a
     create_user_vote(@poll_ax_b.event_a)
@@ -16,6 +16,6 @@ class PollAxBsController < ApplicationController
   end
 
   def create_user_vote(event)
-    UserVote.create(user: current_user, poll: @poll_ax_b, event: event)
+    UserVote.create(user: current_user, poll: @poll_ax_b.poll, voted_for: event)
   end
 end

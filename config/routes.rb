@@ -3,6 +3,12 @@ Rails.application.routes.draw do
   get "poll_ax_bs/vote_for_b"
   resources :polls
   resources :leagues
+  resources :poll_ax_bs do
+    member do
+      post "vote_for_a"
+      post "vote_for_b"
+    end
+  end
   devise_for :users, controllers: {
     sessions: "users/sessions"
   }

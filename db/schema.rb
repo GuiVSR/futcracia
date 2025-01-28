@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_27_050424) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_28_192026) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -75,7 +75,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_27_050424) do
     t.integer "pollable_id", null: false
     t.string "winner"
     t.integer "match_id", null: false
-    t.integer "n_votes"
     t.index ["match_id"], name: "index_polls_on_match_id"
     t.index ["pollable_type", "pollable_id"], name: "index_polls_on_pollable"
   end
@@ -95,13 +94,11 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_27_050424) do
 
   create_table "user_votes", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.string "poll_type", null: false
     t.integer "poll_id", null: false
-    t.string "vote_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "event"
-    t.index ["poll_type", "poll_id"], name: "index_user_votes_on_poll"
+    t.string "voted_for"
+    t.index ["poll_id"], name: "index_user_votes_on_poll"
     t.index ["user_id"], name: "index_user_votes_on_user_id"
   end
 
