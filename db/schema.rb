@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_28_192026) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_01_185608) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -65,6 +65,19 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_28_192026) do
     t.datetime "updated_at", null: false
     t.string "event_a"
     t.string "event_b"
+    t.integer "event_a_count", default: 0
+    t.integer "event_b_count", default: 0
+  end
+
+  create_table "poll_ax_bx_cs", force: :cascade do |t|
+    t.string "event_a"
+    t.string "event_b"
+    t.string "event_c"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "event_a_count", default: 0
+    t.integer "event_b_count", default: 0
+    t.integer "event_c_count", default: 0
   end
 
   create_table "polls", force: :cascade do |t|

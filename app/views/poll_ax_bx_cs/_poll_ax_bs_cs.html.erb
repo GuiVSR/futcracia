@@ -1,0 +1,22 @@
+<div class="card-futcracia middle-card">
+  <div>poll AxBxC</div>
+  <%= poll.title %>
+  <%= poll.pollable.event_a %>
+  <%= poll.pollable.event_b %>
+  <%= poll.pollable.event_b %>
+  <div>
+    Votos A
+    <%= poll.pollable.event_a_count %>
+    <%= render 'shared/button', text: 'Vote for A', path: vote_for_a_poll_ax_bx_c_path(poll.pollable), method: :post, remote: true, style: "py-3 px-6 w-full" %>
+  </div>
+  <div>
+    Votos B
+    <%= poll.pollable.event_b_count %>
+    <%= render 'shared/button', text: 'Vote for B', path: vote_for_b_poll_ax_bx_c_path(poll.pollable), method: :post, remote: true, style: "py-3 px-6 w-full" %>
+  </div>
+  <div>
+    Votos C
+    <%= poll.pollable.event_c_count %>
+    <%= render 'shared/button', text: 'Vote for C', path: vote_for_c_poll_ax_bx_c_path(poll.pollable), method: :post, remote: true, style: "py-3 px-6 w-full" %>
+  </div>
+</div>
