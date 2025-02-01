@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :poll_ax_bx_cs
   get "poll_ax_bs/vote_for_a"
   get "poll_ax_bs/vote_for_b"
   resources :polls
@@ -7,6 +8,13 @@ Rails.application.routes.draw do
     member do
       post "vote_for_a"
       post "vote_for_b"
+    end
+  end
+  resources :poll_ax_bx_cs do
+    member do
+      post "vote_for_a"
+      post "vote_for_b"
+      post "vote_for_c"
     end
   end
   devise_for :users, controllers: {
