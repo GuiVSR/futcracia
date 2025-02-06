@@ -12,7 +12,7 @@ puts "Seeded leagues!"
 
 teamsData = [
               {
-                name: "sem-time",
+                name: "sem_time",
                 official_name: "Sem Time",
                 city: nil,
                 founded_on: nil,
@@ -22,7 +22,7 @@ teamsData = [
                 league: leagues[0]
               },
               {
-                name: "athletico-paranaense",
+                name: "athletico_paranaense",
                 official_name: "Club Athletico Paranaense",
                 city: "Curitiba",
                 founded_on: "1924-03-26",
@@ -32,7 +32,7 @@ teamsData = [
                 league: leagues[2]
               },
               {
-                name: "atletico-mineiro",
+                name: "atletico_mineiro",
                 official_name: "Clube Atlético Mineiro",
                 city: "Belo Horizonte",
                 founded_on: "1908-03-25",
@@ -172,7 +172,7 @@ teamsData = [
                 league: leagues[1]
               },
               {
-                name: "red-bull-bragantino",
+                name: "red_bull_bragantino",
                 official_name: "Red Bull Bragantino",
                 city: "Bragança Paulista",
                 founded_on: "1928-01-08",
